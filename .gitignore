@@ -1,0 +1,25 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
+crash.log
+.terraform.tfstate.lock.info
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Go
+/app/bin/
+*.test
+coverage.out
+
+# Python
+__pycache__/
+.venv/
+
+# OS
+.DS_Store
