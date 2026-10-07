@@ -13,6 +13,12 @@ Rough shape as it grows:
 - **Resurface** `GET /items/random` now, later a scheduled "here's something you forgot" notification
 - **Patterns** later: AI clusters and summarizes the basket
 
+### Scope (decided Oct 7)
+
+Study hours (10:15–4:30) cover the Go backend and the platform around it only.
+The phone and web client, and the product side (free app with paid AI features), are a separate project for now and stay outside study hours.
+Nur may bring them into the plan later; until she does, don't schedule them.
+
 ## Week 0 — Foundations (Wed Oct 7 – Fri Oct 9)
 
 Goal: a safe AWS account, Terraform with remote state, and the first version of the app running on kind.

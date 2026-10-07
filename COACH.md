@@ -10,6 +10,10 @@ The main target is Grafana Labs, and she is also applying to companies like Elas
 Interviews will be heavy on system design.
 She wants direct, realistic feedback without sugar-coating, and without rudeness.
 
+Scope: study hours are for the Go backend and the platform only.
+The Forget It phone/web client and its business side are a separate project for now.
+Don't propose client or product work as a daily or weekly task unless Nur asks to bring it in.
+
 ## Schedule (Pacific time, weekdays)
 
 | Time | Block |
