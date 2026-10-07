@@ -23,33 +23,37 @@ Nur may bring them into the plan later; until she does, don't schedule them.
 
 Goal: a safe AWS account, Terraform with remote state, and the first version of the app running on kind.
 
-### Wed Oct 7 (Day 1) — confirmed
+### Wed Oct 7 (Day 1) — done in part
 
-**System design (10:15–11:15), classic question:**
+Done: admin IAM user with MFA, Terraform skeleton for the S3 state bucket with state saved, a $5 budget with one alert.
+Carried to Thursday: the system design question, the state-lock break-fix, and pushing the code.
+Decided: one alert threshold on a $5 budget is enough for now. Raise the budget before the EKS week.
+
+### Thu Oct 8 (Day 2) — confirmed
+
+**System design (10:15–11:15), classic question (carried from Day 1):**
 Design Forget It as a product for 10 million users.
 Users capture short items (text or a link) from web and mobile, and the system resurfaces one random forgotten item per user per day.
 Cover: requirements, estimates, API, data model, how "random but not recently shown" works at scale, and how the daily resurfacing job runs for 10M users.
+Write it in `design/2026-10-08-forget-it-10m-users.md` using `design/TEMPLATE.md`.
 
-**Build:**
-1. Account hardening: MFA on root, no root access keys, an admin identity (IAM Identity Center user preferred) with MFA, AWS CLI profile using it.
-2. Budget as code: Terraform an AWS Budget of 80 CAD/month (check your billing currency first; convert if it's USD) with email alerts at 50%, 80%, and 100%.
-3. Terraform bootstrap: an S3 state bucket (versioning, encryption, public access blocked) using S3-native state locking, then move the budget's state into it.
-4. Layout: `infra/bootstrap/` for the state bucket, `infra/modules/` and `infra/envs/dev/` for everything after.
+**Morning build — finish Day 1:**
+1. Confirm the Terraform code is in the repo (Nur planned to push it Wednesday night). If it isn't, push it first.
+2. Quick checks, fix anything missing: root account has MFA and no access keys; the state bucket has versioning, encryption, and public access blocked; `infra/bootstrap/` holds the state bucket and `infra/envs/dev/` is ready for what comes next.
+3. If the budget was made in the console, bring it into Terraform.
 
-**Done when:** the budget exists, state lives in S3, `terraform plan` is clean, and nothing billable is left running.
+**Break it and fix it (do it right after the morning build, while Terraform is fresh):**
+Run two `terraform apply` commands at once and watch the lock. Then simulate a stale lock (kill an apply mid-run) and recover safely. Write the PIR in `break-fix/`.
 
-**Break it and fix it:** run two `terraform apply` commands at once and watch the lock. Then simulate a stale lock (kill an apply mid-run) and recover safely. Write the PIR.
+**Afternoon build — start the Go service:**
+`POST /items`, `GET /items/random`, `X-Tenant-ID` required, in-memory store, unit tests.
 
-### Thu Oct 8 (Day 2) — tentative, decided at Wednesday's check-in
-
-- Design: ADR-001 on how Terraform is organized (state, environments, modules) and why.
-- Build: Go service skeleton. `POST /items`, `GET /items/random`, `X-Tenant-ID` required, in-memory store, unit tests, Dockerfile, running on kind.
-- Break-fix: a pod in CrashLoopBackOff.
+**Done when:** the design file, the Terraform code, and the PIR are pushed; `terraform plan` is clean; the Go service runs locally with passing tests; nothing billable is left running.
 
 ### Fri Oct 9 — tentative
 
-- Morning: catch-up from Wed/Thu.
-- Design: first mock interview (multi-tenant rate limiter).
+- Morning catch-up: Dockerfile, run the service on kind, and the CrashLoopBackOff break-fix.
+- Design: ADR-001 on how Terraform is organized (moved from Thursday), or the first mock interview (multi-tenant rate limiter). Decide at Thursday's check-in.
 - 3:45 check-in, 4:00 weekly review and plan Week 1.
 
 ## Roadmap (rough, re-planned every Friday)

@@ -17,12 +17,14 @@ Format:
 <!-- entries below -->
 
 ## 2026-10-07 (Day 1)
-- Done: Admin IAM user with MFA. Terraform skeleton for the S3 state bucket, with state saved. AWS budget of $5 with one alert (lower than the planned 80 CAD, as a starting tripwire).
-- Not confirmed yet: system design question (Forget It for 10M users), break-fix (Terraform state lock) and its PIR, root account MFA and access keys, whether the budget is in Terraform, three alert thresholds. No Terraform code or design file is in the repo yet.
-- Blocked: nothing reported.
-- Note: a good part of the day went to product questions (monetization, naming, domains, competitors) that are outside study scope.
+- Done: Admin IAM user with MFA. Terraform skeleton for the S3 state bucket, with state saved. AWS budget of $5 with one alert (kept at one threshold for now).
+- Not done: system design question (Forget It for 10M users) and the Terraform state-lock break-fix with its PIR. Both carried to Thursday.
+- Not pushed yet: Terraform code. Nur plans to push it tonight.
+- Blocked: nothing.
+- Note: part of the day went to thinking about the app as a product (monetization, naming, domains, competitors), which is outside study scope.
+- Still open: root account MFA and access keys, bucket settings, whether the budget is in Terraform.
 - AWS spend month-to-date: not reported.
-- Tomorrow: to be confirmed with Nur (see PLAN.md).
+- Tomorrow: Day 1 design question, finish Day 1 leftovers, state-lock break-fix, start the Go service. See PLAN.md.
 
 ## 2026-10-06 (Day 0)
 - Done: Agreed the plan, the app (Forget It), the schedule, and the repo layout.
