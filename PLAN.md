@@ -57,6 +57,39 @@ No break-fix on Friday.
 - No full mocks until around Fri Oct 30 (end of Week 3), decided with Nur on Oct 8. Until then Friday's design block is an untimed classic question with follow-ups at the check-in, no scores.
 - Small Terraform fixes from the Oct 8 review (see PROGRESS.md).
 
+## Week 1 (Tue Oct 13 – Fri Oct 16) — PROPOSED, not agreed yet
+
+Proposed at the Oct 9 weekly review, before Nur replied. Nothing here is decided.
+Coach sessions: confirm this with Nur before treating it as the plan, then replace the Week 0 section above with the agreed version.
+The Week 0 scorecard is in `weekly/2026-W41.md` (draft).
+
+Goal: the Go service runs on kind with Postgres, and the first design answers and the first PIRs are in the repo.
+
+Two proposed changes to how the day runs:
+- The design answer is pushed by 11:15, before any build work starts, whether or not it is complete.
+- Build stops at 3:00 for the break-fix, even in the middle of a task.
+
+### Tue Oct 13 (Day 4) — proposed
+
+| Time | Block | Done when |
+|---|---|---|
+| 10:15–11:15 | **System design deep dive: Terraform state, locking, drift and blast radius.** What state is and why it is remote, how S3-native locking works and what a stale lock looks like, what drift is and how you find it, and how splitting state (bootstrap vs. envs) limits the damage of a bad apply. Use your own `infra/` as the example. | `design/2026-10-13-terraform-state.md` is pushed by 11:15, complete or not. |
+| 11:15–12:30, 1:15–3:00 | **Go service, local only.** `POST /items`, `GET /items/random`, `X-Tenant-ID` required, in-memory store, unit tests. No Docker and no kind. If this was written on Friday, push it and start the Dockerfile instead. | `go test ./...` passes, and a request without the tenant header returns 400. |
+| 3:00–3:40 | **Break-fix: state lock.** Throwaway folder with its own state key and a `time_sleep` resource; run two applies at once, kill one mid-run, find the `.tflock` object in S3, recover with `force-unlock`. | `break-fix/2026-10-13-terraform-state-lock.md` follows the template. |
+| 3:40–4:00 | If still open: activate IAM access to billing (sign in as root, Account settings) and read month-to-date. Write the 5-line interview explanation, commit, push, destroy the throwaway resources. | Everything is on `main` and the spend figure is in hand. |
+| 4:00 | Check-in. The coach reviews the deep dive with interviewer follow-ups. | |
+
+### Rest of the week — proposed
+
+| Day | System design | Build | Break-fix |
+|---|---|---|---|
+| Wed Oct 14 | Classic: Forget It for 10 million users. If written on Oct 9, #16 URL shortener with analytics. | Dockerfile, kind cluster, Deployment and Service with probes | CrashLoopBackOff, with PIR |
+| Thu Oct 15 | ADR-001: how Terraform is organized, including where an account-wide budget belongs | Postgres on kind, storage behind an interface, tenant in every query | Networking: break the app's path to Postgres (DNS or Service selector), debug from inside the pod, with PIR |
+| Fri Oct 16 | Untimed classic, no scores: #2 multi-tenant rate limiter, follow-ups at the check-in | Morning catch-up (including the small Terraform fixes from the Oct 8 review), then GitHub Actions running tests and build on a PR | None, or a missed PIR |
+
+Proposed move: the Helm chart, pushing to GHCR, and `terraform plan` on PRs go from Week 1 to the start of Week 2, ahead of Kafka.
+The roadmap table below is unchanged until Nur agrees. Whether the whole roadmap slides a week is a question for the Oct 16 review.
+
 ## Roadmap (rough, re-planned every Friday)
 
 | Week | Dates | Focus |
