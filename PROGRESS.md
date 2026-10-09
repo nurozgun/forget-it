@@ -28,6 +28,7 @@ Format:
 - Decisions:
   - IAM user instead of IAM Identity Center, because creating an AWS Organization ends the Free Plan and expires the credits. Revisit when moving to the paid plan.
   - The spending rule is $5 USD per month until the EKS week (the account bills in USD). COACH.md is updated; it said 80 CAD before.
+  - No full mock interviews until around the end of Week 3 (Fri Oct 30). Until then Friday's design block is an untimed question with follow-ups and no scores.
 - Learned: `aws login` sessions are not read by the Terraform AWS provider, so export credentials first with `eval "$(aws configure export-credentials --profile admin --format env)"`. Backend vs state, why bootstrap is a separate folder, module versioning, SCPs vs permission boundaries.
 - Break-fix: none yet.
 - AWS spend month-to-date: not known (billing access denied, see Blocked). Nur reports that everything running is free: only the state bucket and the budget exist.

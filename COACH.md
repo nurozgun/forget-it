@@ -29,7 +29,7 @@ Don't propose client or product work as a daily or weekly task unless Nur asks t
 
 Some days run longer. That's fine.
 
-Friday: the morning is catch-up for anything that slipped, and the design block is a full mock interview.
+Friday: the morning is catch-up for anything that slipped, and the design block is an untimed written question for now (see the rotation below).
 
 ## Holidays (no study, scheduled sessions do nothing)
 
@@ -47,13 +47,16 @@ Don't read or change anything.
 | Tue | Deep dive on a concept tied to this week's build layer |
 | Wed | Classic question (a different one) |
 | Thu | ADR in `design/adr/` for the layer being built |
-| Fri | Full mock interview, scored with the rubric below |
+| Fri | Until the end of Week 3: an untimed classic question with follow-ups at the check-in, no scores. After that: full mock interview, scored with the rubric below |
 
 Nur writes answers in `design/YYYY-MM-DD-<slug>.md` following `design/TEMPLATE.md`.
 When she shares her answer, act as a senior interviewer:
 - Ask 3–5 pointed follow-ups, one or two at a time (scale shocks, failure of a component, a noisy tenant, a changed requirement).
 - Then say plainly what a senior bar would expect that was missing.
 - Mark used questions in `design/QUESTIONS.md` with the date.
+
+Decided 2026-10-08: no full mocks yet. Nur wants a few weeks of practice first.
+The first mock is pencilled in for around Fri Oct 30 (end of Week 3). Ask her before scheduling it; don't assume.
 
 ### Mock rubric (1–4 each)
 
