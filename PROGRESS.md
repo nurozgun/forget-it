@@ -16,6 +16,17 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-09 (Day 3)
+- Status of this entry: provisional. Written at the 3:45 check-in from the repo alone, before Nur replied. Update it with her answers.
+- Done: nothing from today is on `main` as of 3:45 PT. The latest commit is `79d639e` from the Oct 8 check-in. There is no `design/2026-10-09-forget-it-10m-users.md`, `app/` holds only its README, and no branch has new work.
+- Not confirmed (asked at the check-in, no answer yet): the 10M-users design answer, the Go service with tests, the billing access fix, the 5-line interview explanation. Any of these may exist on Nur's laptop without being pushed.
+- Blocked: not reported yet.
+- Learned: not reported yet.
+- Break-fix: none planned today (agreed Oct 8). Still no PIR after three study days.
+- AWS spend month-to-date: not reported yet. It has not been known on any day so far. "Did you destroy everything billable?" was asked and is not answered yet.
+- Coach note: if the design answer is not written, this is the third study day without one, on the day the break-fix was dropped to make room for it. The repo so far shows solid Terraform, no design answers and no PIRs, while the interviews are design-heavy. The interviewer follow-ups on the design answer are still owed once it is pushed.
+- Tomorrow: no study on Mon Oct 12 (holiday). The next study day is Tue Oct 13, planned at the 4:00 weekly review.
+
 ## 2026-10-08 (Day 2)
 - Done (all of it Day 1 leftovers):
   - Account hardening finished: root MFA on, no root access keys, admin IAM user `nur-admin` with MFA, CLI profile `admin` via `aws login` (short-lived credentials). The old `terraform-local` access key is deleted.
