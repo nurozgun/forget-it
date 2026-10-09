@@ -29,32 +29,33 @@ Done: admin IAM user with MFA, Terraform skeleton for the S3 state bucket with s
 Carried to Thursday: the system design question, the state-lock break-fix, and pushing the code.
 Decided: one alert threshold on a $5 budget is enough for now. Raise the budget before the EKS week.
 
-### Thu Oct 8 (Day 2) — confirmed
+### Thu Oct 8 (Day 2) — done in part
 
-**System design (10:15–11:15), classic question (carried from Day 1):**
-Design Forget It as a product for 10 million users.
-Users capture short items (text or a link) from web and mobile, and the system resurfaces one random forgotten item per user per day.
-Cover: requirements, estimates, API, data model, how "random but not recently shown" works at scale, and how the daily resurfacing job runs for 10M users.
-Write it in `design/2026-10-08-forget-it-10m-users.md` using `design/TEMPLATE.md`.
+Done: Day 1 leftovers. Account hardening finished, Terraform layout (`bootstrap`, `modules/budget`, `envs/dev`) merged to `main`, budget imported into Terraform, `terraform plan` clean.
+Not done: the design question, the state-lock break-fix, the Go service.
+Decided: the spending rule is $5 USD per month until the EKS week (see COACH.md).
+Week 0's goal of running the app on kind moves to Week 1.
 
-**Morning build — finish Day 1:**
-1. Confirm the Terraform code is in the repo (Nur planned to push it Wednesday night). If it isn't, push it first.
-2. Quick checks, fix anything missing: root account has MFA and no access keys; the state bucket has versioning, encryption, and public access blocked; `infra/bootstrap/` holds the state bucket and `infra/envs/dev/` is ready for what comes next.
-3. If the budget was made in the console, bring it into Terraform.
+### Fri Oct 9 (Day 3) — confirmed
 
-**Break it and fix it (do it right after the morning build, while Terraform is fresh):**
-Run two `terraform apply` commands at once and watch the lock. Then simulate a stale lock (kill an apply mid-run) and recover safely. Write the PIR in `break-fix/`.
+Agreed with Nur on Oct 8: design gets more room, and the break-fix is left out of Friday to make that room.
 
-**Afternoon build — start the Go service:**
-`POST /items`, `GET /items/random`, `X-Tenant-ID` required, in-memory store, unit tests.
+| Time | Block | Done when |
+|---|---|---|
+| 10:15–12:30 | **System design, before opening Terraform.** Design Forget It as a product for 10 million users. Users capture short items (text or a link) from web and mobile, and the system resurfaces one random forgotten item per user per day. Cover requirements, estimates, API, data model, how "random but not recently shown" works at scale, and how the daily resurfacing job runs for 10M users. Untimed: this one is for learning the shape of an answer, not a mock. | `design/2026-10-09-forget-it-10m-users.md` is pushed with all 8 sections of `design/TEMPLATE.md` filled. |
+| 1:15–3:00 | **Go service, local only.** `POST /items`, `GET /items/random`, `X-Tenant-ID` required, in-memory store, unit tests. No Docker and no kind. | `go test ./...` passes, and a request without the tenant header returns 400. |
+| 3:00–3:40 | Fix billing access (sign in as root, Account settings, activate "IAM user and role access to Billing information"), read the month-to-date figure, write the 5-line interview explanation, commit, push. | Everything above is on `main` and the spend figure is in hand. |
+| 3:45 | Check-in. The coach reviews the design answer with interviewer follow-ups. | |
+| 4:00 | Weekly review and Week 1 plan. | |
 
-**Done when:** the design file, the Terraform code, and the PIR are pushed; `terraform plan` is clean; the Go service runs locally with passing tests; nothing billable is left running.
+No break-fix on Friday.
 
-### Fri Oct 9 — tentative
-
-- Morning catch-up: Dockerfile, run the service on kind, and the CrashLoopBackOff break-fix.
-- Design: ADR-001 on how Terraform is organized (moved from Thursday), or the first mock interview (multi-tenant rate limiter). Decide at Thursday's check-in.
-- 3:45 check-in, 4:00 weekly review and plan Week 1.
+**Carried into Week 1 (Tue Oct 13 onward; Mon Oct 12 is a holiday). Order to be decided at Friday's weekly review:**
+- State-lock break-fix with PIR. Use a throwaway folder with its own state key and a `time_sleep` resource so the apply is slow enough to collide and to kill; run two applies at once, kill one mid-run, find the `.tflock` object in S3, recover with `force-unlock`.
+- Dockerfile, run the service on kind, and the CrashLoopBackOff break-fix.
+- ADR-001 on how Terraform is organized (Thursday Oct 15 is the ADR day). Include where an account-wide budget belongs.
+- First timed mock interview (multi-tenant rate limiter), Friday Oct 16.
+- Small Terraform fixes from the Oct 8 review (see PROGRESS.md).
 
 ## Roadmap (rough, re-planned every Friday)
 

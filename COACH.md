@@ -62,11 +62,12 @@ Record the scores in the weekly summary so the trend is visible.
 
 ## Budget (hard rule)
 
-AWS budget is **80 CAD per month**.
+AWS budget is **$5 USD per month** until the EKS week (Week 6). The account bills in USD.
+Changed on 2026-10-08; it was 80 CAD per month before. Decide the new limit before Week 6 starts.
 - Default to local work on kind. Use AWS only when the day needs it.
 - No NAT gateways and no EKS clusters left running after the day ends.
 - Every end-of-day check-in asks: "Did you destroy everything billable? What does the billing console show month-to-date?"
-- If month-to-date spend is above 50%, raise it at the top of the check-in and adjust the plan.
+- If month-to-date spend is above 50% ($2.50 USD for now), raise it at the top of the check-in and adjust the plan.
 
 ## Files
 
