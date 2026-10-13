@@ -36,7 +36,9 @@ Not done: the design question, the state-lock break-fix, the Go service.
 Decided: the spending rule is $5 USD per month until the EKS week (see COACH.md).
 Week 0's goal of running the app on kind moves to Week 1.
 
-### Fri Oct 9 (Day 3) — confirmed
+### Fri Oct 9 — day off
+
+Nur took the day off (confirmed Oct 13). None of the plan below was done; it carries into Week 1.
 
 Agreed with Nur on Oct 8: design gets more room, and the break-fix is left out of Friday to make that room.
 
@@ -57,7 +59,7 @@ No break-fix on Friday.
 - No full mocks until around Fri Oct 30 (end of Week 3), decided with Nur on Oct 8. Until then Friday's design block is an untimed classic question with follow-ups at the check-in, no scores.
 - Small Terraform fixes from the Oct 8 review (see PROGRESS.md).
 
-## Week 1 (Tue Oct 13 – Fri Oct 16) — PROPOSED, not agreed yet
+## Week 1 (Tue Oct 13 – Fri Oct 16) — Tuesday confirmed, rest proposed
 
 Proposed at the Oct 9 weekly review, before Nur replied. Nothing here is decided.
 Coach sessions: confirm this with Nur before treating it as the plan, then replace the Week 0 section above with the agreed version.
@@ -69,7 +71,9 @@ Two proposed changes to how the day runs:
 - The design answer is pushed by 11:15, before any build work starts, whether or not it is complete.
 - Build stops at 3:00 for the break-fix, even in the middle of a task.
 
-### Tue Oct 13 (Day 4) — proposed
+### Tue Oct 13 (Day 3) — confirmed
+
+Nur confirmed on Oct 13 that she starts today with this plan. Wed–Fri are still to be confirmed at today's check-in.
 
 | Time | Block | Done when |
 |---|---|---|
