@@ -17,11 +17,13 @@ Format:
 <!-- entries below -->
 
 ## 2026-10-09 (Fri)
+
 - Day off (Nur confirmed on Oct 13). Not a study day, so Week 0 had two study days, not three.
 - Nothing planned for Friday was done: the 10M-users design answer, the Go service, the billing access fix. All of it carries into Week 1.
 - Tomorrow: no study on Mon Oct 12 (holiday). Week 1 starts Tue Oct 13 with the plan in PLAN.md.
 
 ## 2026-10-08 (Day 2)
+
 - Done (all of it Day 1 leftovers):
   - Account hardening finished: root MFA on, no root access keys, admin IAM user `nur-admin` with MFA, CLI profile `admin` via `aws login` (short-lived credentials). The old `terraform-local` access key is deleted.
   - Terraform layout: `infra/bootstrap/`, `infra/modules/budget/`, `infra/envs/dev/`.
@@ -46,6 +48,7 @@ Format:
 - Tomorrow: a long design block (the 10M-users question, 10:15–12:30, untimed), then the Go service running locally with tests. The state-lock break-fix moves to Week 1 so design gets the room. See PLAN.md.
 
 ## 2026-10-07 (Day 1)
+
 - Done: Admin IAM user with MFA. Terraform skeleton for the S3 state bucket, with state saved. AWS budget of $5 with one alert (kept at one threshold for now).
 - Not done: system design question (Forget It for 10M users) and the Terraform state-lock break-fix with its PIR. Both carried to Thursday.
 - Not pushed yet: Terraform code. Nur plans to push it tonight.
@@ -56,5 +59,6 @@ Format:
 - Tomorrow: Day 1 design question, finish Day 1 leftovers, state-lock break-fix, start the Go service. See PLAN.md.
 
 ## 2026-10-06 (Day 0)
+
 - Done: Agreed the plan, the app (Forget It), the schedule, and the repo layout.
 - Tomorrow: Day 1 as written in PLAN.md.
