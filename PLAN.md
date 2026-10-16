@@ -25,11 +25,13 @@ Added Oct 16. Until the session, this section takes priority over the Week 1 tab
 Giuseppe said not everything needs to be done; the order below is the order of value.
 The Fri/Mon split is proposed; confirm or change it at today's check-in and weekly review.
 
+Notes for Giuseppe (questions, stories, postmortem, targets, his feedback) live in a Google Doc Nur shares with him, not in this repo. The coach sessions can't read that doc, so the end-of-day update should say which items were added to it.
+
 **Must have before the session**
 1. Questions for Giuseppe, sent through async Q&A by end of Monday (one batched message). Draft list is in the Oct 16 chat; include: senior vs. other levels given 6.5 years at Intermediate 2, SRE vs. platform CV, how to start a blank design question, how to split a study week, when to start applying, and how he'd like async Q&A used (the plan says unlimited, he said within session time).
-2. Proudest Hootsuite work, as notes for system design and behavioural stories (`career/hootsuite-stories.md`).
-3. Rivian postmortem: rounds reached, what came up, where it went wrong, what to do differently (`career/rivian-postmortem.md`).
-4. Five target companies: exact role link, level, interview rounds (`career/targets.md`). Grafana, Elastic, and Wealthsimple postings are already known.
+2. Proudest Hootsuite work, as notes for system design and behavioural stories.
+3. Rivian postmortem: rounds reached, what came up, where it went wrong, what to do differently.
+4. Five target companies: exact role link, level, interview rounds. Grafana, Elastic, and Wealthsimple postings are already known.
 5. Excalidraw diagram of a web app you know well (WhatsApp, Netflix...), every component explainable. A rough version is fine; he will go through it in a session. This replaces the stalled 10M-users question for now.
 
 **Should have**
