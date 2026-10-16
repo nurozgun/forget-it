@@ -16,6 +16,19 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-16 (Fri, Week 1 Day 4)
+
+- Status: written at the 3:45 check-in before Nur's update arrived. Update this entry when she replies.
+- Planned (mentor homework day): Excalidraw diagram, Hootsuite stories and Rivian postmortem (these go in Giuseppe's Google Doc), `POST /items` and `GET /items/random` with tests, `/metrics`.
+- Seen in the repo today: only PLAN.md changes (mentor homework added). No code, design answer or PIR pushed.
+- Week 1 as the repo shows it: one code commit (healthz endpoint, Wed Oct 14). No design answers, no PIRs, no PROGRESS entries for Oct 13–15. `POST /items` has been in progress since Wed and isn't pushed.
+- Coach note: from now on, push by 3:40 every day, even if it's WIP, so the day's work can be seen.
+- Done / Blocked / Learned: awaiting Nur.
+- Break-fix: none in `break-fix/`. Awaiting Nur.
+- AWS spend month-to-date: not reported. Billing access fix (root → IAM access to Billing) not confirmed as done.
+- Destroyed everything billable: not confirmed.
+- Tomorrow: Monday plan is set at the 4:00 weekly review.
+
 ## 2026-10-09 (Fri)
 
 - Day off (Nur confirmed on Oct 13). Not a study day, so Week 0 had two study days, not three.
