@@ -51,6 +51,10 @@ Notes for Giuseppe (questions, stories, postmortem, targets, his feedback) live 
 | Mon Oct 19 | SRE book Ch 1 and Ch 13 | Five companies; finish and send the questions | Dockerfile, k3d cluster, healthz running on k3d, k9s, `mise.toml` | SRE Ch 2–3 skim, or diagram polish |
 | Tue Oct 20 | 10:15–10:45 review notes; 10:45–11:30 session | | Act on his feedback; plan the rest of Week 2 | |
 
+## Week 2 (Mon Oct 19 – Fri Oct 23): proposed at the Oct 16 weekly review, not agreed
+
+The draft plan and the roadmap slide are in `weekly/2026-W42.md`. Until Nur confirms them, the "Proposed days" table in the mentor homework section above is still the Monday plan.
+
 ## Week 0 — Foundations (Wed Oct 7 – Fri Oct 9)
 
 Goal: a safe AWS account, Terraform with remote state, and the first version of the app running on kind.
