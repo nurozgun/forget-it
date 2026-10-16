@@ -19,6 +19,36 @@ Study hours (10:15–4:30) cover the Go backend and the platform around it only.
 The phone and web client, and the product side (free app with paid AI features), are a separate project for now and stay outside study hours.
 Nur may bring them into the plan later; until she does, don't schedule them.
 
+## Mentor homework — due Tue Oct 20, 10:45 (session with Giuseppe, 10:45–11:30)
+
+Added Oct 16. Until the session, this section takes priority over the Week 1 tables below.
+Giuseppe said not everything needs to be done; the order below is the order of value.
+The Fri/Mon split is proposed; confirm or change it at today's check-in and weekly review.
+
+**Must have before the session**
+1. Questions for Giuseppe, sent through async Q&A by end of Monday (one batched message). Draft list is in the Oct 16 chat; include: senior vs. other levels given 6.5 years at Intermediate 2, SRE vs. platform CV, how to start a blank design question, how to split a study week, when to start applying, and how he'd like async Q&A used (the plan says unlimited, he said within session time).
+2. Proudest Hootsuite work, as notes for system design and behavioural stories (`career/hootsuite-stories.md`).
+3. Rivian postmortem: rounds reached, what came up, where it went wrong, what to do differently (`career/rivian-postmortem.md`).
+4. Five target companies: exact role link, level, interview rounds (`career/targets.md`). Grafana, Elastic, and Wealthsimple postings are already known.
+5. Excalidraw diagram of a web app you know well (WhatsApp, Netflix...), every component explainable. A rough version is fine; he will go through it in a session. This replaces the stalled 10M-users question for now.
+
+**Should have**
+6. SRE book Ch 1 and Ch 13 first, then Ch 2–3.
+7. k3d (instead of kind, which was never set up), k9s, and a `mise.toml` with pinned tool versions; 30 minutes using k9s instead of kubectl.
+8. `/metrics` Prometheus endpoint in the Go service (`client_golang`).
+
+**Defer until after the session**
+- fnox (no real secrets yet; AWS credentials are already short-lived).
+- OpenSpec → OpenAPI (`design/api/openapi.yaml`, Redocly lint, oapi-codegen). Ask him how he uses it first.
+
+**Proposed days**
+
+| Day | 10:15–11:15 | 11:15–12:30 | 1:15–3:00 | 3:00–3:40 |
+|---|---|---|---|---|
+| Fri Oct 16 | Excalidraw diagram, 60 min, rough is fine | Hootsuite stories + Rivian postmortem | Finish `POST /items` and `GET /items/random` with tests (in progress since Wed) | `/metrics` endpoint |
+| Mon Oct 19 | SRE book Ch 1 and Ch 13 | Five companies; finish and send the questions | Dockerfile, k3d cluster, healthz running on k3d, k9s, `mise.toml` | SRE Ch 2–3 skim, or diagram polish |
+| Tue Oct 20 | 10:15–10:45 review notes; 10:45–11:30 session | | Act on his feedback; plan the rest of Week 2 | |
+
 ## Week 0 — Foundations (Wed Oct 7 – Fri Oct 9)
 
 Goal: a safe AWS account, Terraform with remote state, and the first version of the app running on kind.
@@ -83,7 +113,7 @@ Nur confirmed on Oct 13 that she starts today with this plan. Wed–Fri are stil
 | 3:40–4:00 | If still open: activate IAM access to billing (sign in as root, Account settings) and read month-to-date. Write the 5-line interview explanation, commit, push, destroy the throwaway resources. | Everything is on `main` and the spend figure is in hand. |
 | 4:00 | Check-in. The coach reviews the deep dive with interviewer follow-ups. | |
 
-### Rest of the week — proposed
+### Rest of the week — superseded on Oct 16 by the mentor homework section above
 
 | Day | System design | Build | Break-fix |
 |---|---|---|---|
