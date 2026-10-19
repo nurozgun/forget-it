@@ -16,6 +16,18 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-19 (Mon, Week 2 Day 1)
+
+- Status: written at the 4:00 check-in before Nur's update arrived. Update this entry when she replies.
+- Planned (mentor homework day): SRE book Ch 1 and Ch 13, five target companies, send the batched questions to Giuseppe (due today), Dockerfile, k3d, k9s, `mise.toml`.
+- Seen in the repo today: nothing. The last commit is the Oct 16 weekly review. No code, design answer or PIR pushed since Wed Oct 14's `/healthz`.
+- Still open from Friday: Nur's Oct 16 update, her reply to the Week 1 scorecard, and agreement on the Week 2 plan.
+- Done / Blocked / Learned: awaiting Nur.
+- Break-fix: none in `break-fix/`. Awaiting Nur.
+- AWS spend month-to-date: not reported. Billing access fix not confirmed.
+- Destroyed everything billable: not confirmed.
+- Tomorrow: Tue Oct 20, 10:15–10:45 review notes, 10:45–11:30 mentor session with Giuseppe. The rest of the day is set once Nur replies.
+
 ## 2026-10-16 (Fri, Week 1 Day 4)
 
 - Status: written at the 3:45 check-in before Nur's update arrived. Update this entry when she replies.
