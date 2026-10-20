@@ -21,7 +21,7 @@ Format:
 - Nur was sick from last week through the weekend, so Oct 15–19 were not study days. This explains the empty repo on the Oct 16 and Oct 19 check-ins.
 - Today: mentor session with Giuseppe at 10:45. Prepared with the coach beforehand (in Giuseppe's Google Doc, not this repo): Hootsuite stories, Rivian postmortem, five target companies, and the question list (including a new one on how much back-of-the-envelope math design rounds expect).
 - Learned: k3d vs. kind. k3s is a slimmed-down conformant distribution (SQLite by default on one node, bundled Traefik, load balancer and storage); kind runs upstream components with etcd. Neither matches EKS/GKE. Use k3d for convenience, but don't call it production parity.
-- Tomorrow: restart, Wed Oct 21, at an easy pace. See PLAN.md.
+- Restart is today (Tue Oct 20) at an easy pace, around the 10:45 session. See PLAN.md.
 
 ## 2026-10-19 (Mon, Week 2 Day 1)
 

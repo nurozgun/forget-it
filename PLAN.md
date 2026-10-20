@@ -19,20 +19,20 @@ Study hours (10:15–4:30) cover the Go backend and the platform around it only.
 The phone and web client, and the product side (free app with paid AI features), are a separate project for now and stay outside study hours.
 Nur may bring them into the plan later; until she does, don't schedule them.
 
-## Restart — Wed Oct 21 (confirmed Oct 20)
+## Restart — Tue Oct 20 (confirmed Oct 20)
 
-Nur was sick Oct 15–19 and restarts on Wednesday with the Forget It work and the mentor homework.
-Wednesday is a gentle restart, not a catch-up day: one small win first, then normal blocks.
-The rest of the week is planned after the Oct 20 session, using Giuseppe's feedback. Check what he said before proposing anything bigger.
+Nur was sick Oct 15–19 and restarts today with the mentor session and the Forget It work.
+Gentle restart, not a catch-up day. The rest of the week is planned after the session, using Giuseppe's feedback.
 
 | Time | Block | Done when |
 |---|---|---|
-| 10:15 | **First move:** open `app/`, run `go run .` and `curl localhost:8080/healthz`. Then push whatever exists of `POST /items`, even unfinished. | A commit on `main` before 10:45 |
-| Morning | Finish `POST /items` and `GET /items/random` with an in-memory store, `sync.Mutex`, and tests (`httptest`) | `go test ./...` passes; a missing `X-Tenant-ID` returns 400 |
-| Afternoon | Excalidraw diagram of a familiar app, 60 min, rough is fine (homework item 5) | A first version exists |
+| 10:15–10:45 | **First move:** open `app/`, run `go run .` and `curl localhost:8080/healthz`, push whatever exists of `POST /items`. Then a quick look over the notes in Giuseppe's doc. | A commit on `main` before 10:45 |
+| 10:45–11:30 | **1:1 with Giuseppe**: CV review, top questions, homework check-in | His feedback written into the shared doc |
+| 1:15–3:00 | Finish `POST /items` and `GET /items/random` with an in-memory store, `sync.Mutex`, and tests (`httptest`) | `go test ./...` passes; a missing `X-Tenant-ID` returns 400 |
+| 3:00–3:40 | Plan the rest of the week from his feedback, or start the Excalidraw diagram (60 min, rough is fine) | |
 | 3:40 | Push, even if WIP | |
 
-Homework items 1–4 (questions, Hootsuite stories, Rivian postmortem, five companies) were drafted on Oct 20 and live in Giuseppe's Google Doc.
+Homework items 1–4 (questions, Hootsuite stories, Rivian postmortem, five companies) were drafted early on Oct 20 and live in Giuseppe's Google Doc.
 
 ## Mentor homework — due Tue Oct 20, 10:45 (session with Giuseppe, 10:45–11:30)
 
