@@ -16,9 +16,16 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-20 (Tue)
+
+- Nur was sick from last week through the weekend, so Oct 15–19 were not study days. This explains the empty repo on the Oct 16 and Oct 19 check-ins.
+- Today: mentor session with Giuseppe at 10:45. Prepared with the coach beforehand (in Giuseppe's Google Doc, not this repo): Hootsuite stories, Rivian postmortem, five target companies, and the question list (including a new one on how much back-of-the-envelope math design rounds expect).
+- Learned: k3d vs. kind. k3s is a slimmed-down conformant distribution (SQLite by default on one node, bundled Traefik, load balancer and storage); kind runs upstream components with etcd. Neither matches EKS/GKE. Use k3d for convenience, but don't call it production parity.
+- Tomorrow: restart, Wed Oct 21, at an easy pace. See PLAN.md.
+
 ## 2026-10-19 (Mon, Week 2 Day 1)
 
-- Status: written at the 4:00 check-in before Nur's update arrived. Update this entry when she replies.
+- Not a study day: Nur was sick (confirmed Oct 20). The placeholder below is kept for the record.
 - Planned (mentor homework day): SRE book Ch 1 and Ch 13, five target companies, send the batched questions to Giuseppe (due today), Dockerfile, k3d, k9s, `mise.toml`.
 - Seen in the repo today: nothing. The last commit is the Oct 16 weekly review. No code, design answer or PIR pushed since Wed Oct 14's `/healthz`.
 - Still open from Friday: Nur's Oct 16 update, her reply to the Week 1 scorecard, and agreement on the Week 2 plan.
@@ -30,7 +37,7 @@ Format:
 
 ## 2026-10-16 (Fri, Week 1 Day 4)
 
-- Status: written at the 3:45 check-in before Nur's update arrived. Update this entry when she replies.
+- Not a study day: Nur was sick (confirmed Oct 20). The placeholder below is kept for the record.
 - Planned (mentor homework day): Excalidraw diagram, Hootsuite stories and Rivian postmortem (these go in Giuseppe's Google Doc), `POST /items` and `GET /items/random` with tests, `/metrics`.
 - Seen in the repo today: only PLAN.md changes (mentor homework added). No code, design answer or PIR pushed.
 - Week 1 as the repo shows it: one code commit (healthz endpoint, Wed Oct 14). No design answers, no PIRs, no PROGRESS entries for Oct 13–15. `POST /items` has been in progress since Wed and isn't pushed.
