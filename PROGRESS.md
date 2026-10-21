@@ -16,6 +16,17 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-21 (Wed, Week 2)
+
+- Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
+- Seen in the repo: nothing pushed since the Oct 20 morning restart commits. No `POST /items`, design answer or PIR. No end-of-day entry for Tue Oct 20 either.
+- Still open: Giuseppe's feedback from the Oct 20 1:1, and the plan for the rest of Week 2 that was meant to come from it.
+- Done / Blocked / Learned (Tue and Wed): awaiting Nur.
+- Break-fix: none in `break-fix/`. Awaiting Nur.
+- AWS spend month-to-date: not reported. Billing access fix not confirmed.
+- Destroyed everything billable: not confirmed.
+- Tomorrow: Thu Oct 22 is set once Nur replies.
+
 ## 2026-10-20 (Tue)
 
 - Nur was sick from last week through the weekend, so Oct 15–19 were not study days. This explains the empty repo on the Oct 16 and Oct 19 check-ins.
