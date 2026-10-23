@@ -16,6 +16,17 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-23 (Fri, Week 2)
+
+- Placeholder written at the 3:45 check-in while waiting for Nur's update. It gets replaced when she replies.
+- Seen in the repo: still nothing pushed since the Oct 20 morning restart commit (fourth study day in a row). `app/` has only `/healthz`. No design answer, PIR or PROGRESS entry of Nur's own for Oct 20–23.
+- Still open: Giuseppe's feedback from the Oct 20 1:1, and a real Week 2 plan.
+- Done / Blocked / Learned: awaiting Nur.
+- Break-fix: none in `break-fix/`. Awaiting Nur.
+- AWS spend month-to-date: not reported all of October. Billing access fix not confirmed. Top item.
+- Destroyed everything billable: not confirmed.
+- Next: Monday is planned at the 4:00 weekly review, not here.
+
 ## 2026-10-22 (Thu, Week 2)
 
 - Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
