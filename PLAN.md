@@ -19,6 +19,36 @@ Study hours (10:15–4:30) cover the Go backend and the platform around it only.
 The phone and web client, and the product side (free app with paid AI features), are a separate project for now and stay outside study hours.
 Nur may bring them into the plan later; until she does, don't schedule them.
 
+## Week 3 (Mon Oct 26 – Fri Oct 30): proposed at the Oct 23 weekly review, not agreed
+
+Proposed before Nur replied. Coach sessions: confirm with Nur before treating this as the plan.
+The Week 2 scorecard and the open questions to Nur are in `weekly/2026-W43.md` (draft).
+
+Goal: get the service and the habits back on track, and put the first design answers and the first PIR in the repo. Kafka waits.
+Rule: push the design file by 11:15 and everything else by 3:40, even if it's half-done.
+
+### Mon Oct 26 — proposed
+
+| Time | Block | Done when |
+|---|---|---|
+| 10:15–11:15 | **System design, classic #2: multi-tenant rate limiter for a public API.** Use `design/TEMPLATE.md`. Cover: per-tenant limits and tiers, token bucket vs. sliding window, where the counters live (local vs. Redis) and what happens when that store is slow or down, and how to stop one noisy tenant from hurting the others. Rough is fine; all 8 headings should have something under them. | `design/2026-10-26-rate-limiter.md` is pushed by 11:15, complete or not. |
+| 11:15–12:30 | **Go service, local only.** `POST /items` (text or link) and `GET /items/random`, in-memory store guarded by `sync.Mutex`, keyed by tenant. A missing `X-Tenant-ID` returns 400. | Both endpoints work with `curl`. |
+| 1:15–3:00 | Tests with `httptest`: happy path, missing tenant, empty basket on `/random`, and tenant isolation (tenant A never sees B's items). Then push. If there's time, start the multi-stage Dockerfile. | `go test ./...` passes and is on `main`. |
+| 3:00–3:40 | **Break-fix: data race.** Remove the mutex, write a test that hits `POST` concurrently, run `go test -race`, read the report, put the fix back. | `break-fix/2026-10-26-data-race.md` follows the template. |
+| 3:40–4:00 | If still open: billing access fix (sign in as root → Account → activate IAM user and role access to Billing) and read month-to-date spend. Write the 5-line interview note, commit, push. Nothing on AWS needs destroying today. | Everything is on `main` and the spend figure is in hand. |
+| 4:00 | Check-in. The coach reviews the rate limiter answer with interviewer follow-ups. | |
+
+### Rest of the week — proposed
+
+| Day | Design 10:15–11:15 | Build | Break-fix 3:00–3:40 |
+|---|---|---|---|
+| Tue Oct 27 | Deep dive: Kubernetes requests vs. limits, OOMKilled vs. CPU throttling | Multi-stage Dockerfile, k3d cluster, Deployment with probes, k9s, `mise.toml` | CrashLoopBackOff on k3d, PIR |
+| Wed Oct 28 | Classic #5: notification system | `/metrics` with `client_golang`, then Postgres on k3d behind a storage interface | Break the app→Postgres path (DNS or Service selector), debug from inside the pod, PIR |
+| Thu Oct 29 | ADR-001: k3d over kind for local development | Tenant in every query, then GitHub Actions: test and build on PR | Terraform state lock (only S3), PIR |
+| Fri Oct 30 | Untimed classic #16: URL shortener with analytics, follow-ups at the check-in. The first scored mock is proposed to move to Nov 6 or later; Nur decides | Catch-up morning, then the small Terraform fixes from the Oct 8 review | None |
+
+Open for Nur: Giuseppe's Oct 20 feedback, days off or interviews next week, roadmap option A (slide two weeks) or B (slide one week and cut Mimir/Pyroscope, merge GitOps and security). The roadmap table below is unchanged until she decides.
+
 ## Restart — Tue Oct 20 (confirmed Oct 20)
 
 Nur was sick Oct 15–19 and restarts today with the mentor session and the Forget It work.
@@ -66,9 +96,10 @@ Notes for Giuseppe (questions, stories, postmortem, targets, his feedback) live 
 | Mon Oct 19 | SRE book Ch 1 and Ch 13 | Five companies; finish and send the questions | Dockerfile, k3d cluster, healthz running on k3d, k9s, `mise.toml` | SRE Ch 2–3 skim, or diagram polish |
 | Tue Oct 20 | 10:15–10:45 review notes; 10:45–11:30 session | | Act on his feedback; plan the rest of Week 2 | |
 
-## Week 2 (Mon Oct 19 – Fri Oct 23): proposed at the Oct 16 weekly review, not agreed
+## Week 2 (Mon Oct 19 – Fri Oct 23) — past
 
-The draft plan and the roadmap slide are in `weekly/2026-W42.md`. Until Nur confirms them, the "Proposed days" table in the mentor homework section above is still the Monday plan.
+Mon was a sick day; Tue was the restart around the mentor 1:1 (plan above). The Oct 16 draft plan was never confirmed.
+Scorecard in `weekly/2026-W43.md`.
 
 ## Week 0 — Foundations (Wed Oct 7 – Fri Oct 9)
 
