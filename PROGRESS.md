@@ -16,6 +16,17 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-26 (Mon, Week 3 Day 1)
+
+- Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
+- Seen in the repo: nothing pushed since the Oct 20 morning restart commit (fifth study day in a row). `main` and `FI-1` have no new work. `app/` has only `/healthz`. No `design/2026-10-26-rate-limiter.md` and no data-race PIR.
+- Still open from the Oct 23 weekly review: Giuseppe's Oct 20 feedback, upcoming interviews or days off, roadmap A or B, and the mock date.
+- Done / Blocked / Learned: awaiting Nur.
+- Break-fix: none in `break-fix/`. Awaiting Nur.
+- AWS spend month-to-date: not reported all of October. Billing access fix not confirmed.
+- Destroyed everything billable: not confirmed.
+- Tomorrow: Tue Oct 27 is set with Nur once she replies. Until then the proposed Week 3 table in PLAN.md stands, with Monday's work carried.
+
 ## 2026-10-23 (Fri, Week 2)
 
 - Placeholder written at the 3:45 check-in while waiting for Nur's update. It gets replaced when she replies.

@@ -27,7 +27,9 @@ The Week 2 scorecard and the open questions to Nur are in `weekly/2026-W43.md` (
 Goal: get the service and the habits back on track, and put the first design answers and the first PIR in the repo. Kafka waits.
 Rule: push the design file by 11:15 and everything else by 3:40, even if it's half-done.
 
-### Mon Oct 26 — proposed
+### Mon Oct 26 — proposed; nothing pushed by the 4:00 check-in
+
+No update from Nur yet. If it wasn't done, Monday's build and break-fix carry into Tue Oct 27 and the Tuesday plan gets cut down, not stacked. Decide at the check-in.
 
 | Time | Block | Done when |
 |---|---|---|
