@@ -16,8 +16,15 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-27 (Tue)
+
+- Nur was sick again Oct 20–26 (a second virus right after the first), with no energy for study. The placeholder entries for Oct 21, 22, 23 and 26 are not missed work; they were sick days. Two weeks lost to illness in total (Oct 15–26).
+- Not yet known: whether the Oct 20 session with Giuseppe happened and what he said. Nur has messaged him about being sick.
+- Today: slow restart from about 2 PM with the tooling Giuseppe recommended (mise, k3d, k9s). See PLAN.md.
+
 ## 2026-10-26 (Mon, Week 3 Day 1)
 
+- Sick day (confirmed Oct 27). The placeholder below is kept for the record.
 - Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
 - Seen in the repo: nothing pushed since the Oct 20 morning restart commit (fifth study day in a row). `main` and `FI-1` have no new work. `app/` has only `/healthz`. No `design/2026-10-26-rate-limiter.md` and no data-race PIR.
 - Still open from the Oct 23 weekly review: Giuseppe's Oct 20 feedback, upcoming interviews or days off, roadmap A or B, and the mock date.
@@ -29,6 +36,7 @@ Format:
 
 ## 2026-10-23 (Fri, Week 2)
 
+- Sick day (confirmed Oct 27). The placeholder below is kept for the record.
 - Placeholder written at the 3:45 check-in while waiting for Nur's update. It gets replaced when she replies.
 - Seen in the repo: still nothing pushed since the Oct 20 morning restart commit (fourth study day in a row). `app/` has only `/healthz`. No design answer, PIR or PROGRESS entry of Nur's own for Oct 20–23.
 - Still open: Giuseppe's feedback from the Oct 20 1:1, and a real Week 2 plan.
@@ -40,6 +48,7 @@ Format:
 
 ## 2026-10-22 (Thu, Week 2)
 
+- Sick day (confirmed Oct 27). The placeholder below is kept for the record.
 - Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
 - Seen in the repo: still nothing pushed since the Oct 20 morning restart commit. `app/` has only `/healthz`. No design answer, PIR or PROGRESS entry for Oct 20–22.
 - Still open: Giuseppe's feedback from the Oct 20 1:1, and the rest of the Week 2 plan that was meant to come from it.
@@ -51,6 +60,7 @@ Format:
 
 ## 2026-10-21 (Wed, Week 2)
 
+- Sick day (confirmed Oct 27). The placeholder below is kept for the record.
 - Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
 - Seen in the repo: nothing pushed since the Oct 20 morning restart commits. No `POST /items`, design answer or PIR. No end-of-day entry for Tue Oct 20 either.
 - Still open: Giuseppe's feedback from the Oct 20 1:1, and the plan for the rest of Week 2 that was meant to come from it.

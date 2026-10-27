@@ -19,6 +19,20 @@ Study hours (10:15–4:30) cover the Go backend and the platform around it only.
 The phone and web client, and the product side (free app with paid AI features), are a separate project for now and stay outside study hours.
 Nur may bring them into the plan later; until she does, don't schedule them.
 
+## Restart — Tue Oct 27 afternoon (confirmed Oct 27)
+
+Nur was sick Oct 15–26 and restarts slowly today, from about 2 PM. Small mechanical steps only; stop when tired.
+The rest of Week 3 is decided at today's check-in. The proposed Week 3 table below is not the plan until she agrees to it.
+
+| Step | What | Done when |
+|---|---|---|
+| 1 (15 min) | Install mise if needed, then in the repo root: `mise use go@1.25 kubectl k3d k9s`. If a tool isn't found, install it with Homebrew instead. | `mise.toml` exists and `mise ls` shows the tools |
+| 2 (15 min) | `k3d cluster create forget-it`, then `kubectl get nodes` | The node is `Ready` |
+| 3 (30 min) | Open `k9s` and explore the empty cluster: `:pods` in `kube-system`, logs, describe. Note what k3s bundles (Traefik, CoreDNS, local-path storage, the service load balancer). | A few notes in PROGRESS.md |
+| 4 | Commit `mise.toml` and push. `k3d cluster stop forget-it` when done (it's local, so it costs nothing either way). | Pushed |
+
+Optional only with energy left: `/metrics` endpoint with `client_golang`.
+
 ## Week 3 (Mon Oct 26 – Fri Oct 30): proposed at the Oct 23 weekly review, not agreed
 
 Proposed before Nur replied. Coach sessions: confirm with Nur before treating this as the plan.
