@@ -92,3 +92,9 @@ Every session starts fresh with no memory, so the repo is the memory. Always:
 
 Never fill gaps by guessing what Nur wants. Propose, then decide together.
 Plans are agile: if something is blocked, change the plan rather than pretend.
+
+## Interview story bank
+
+Each Friday at the weekly review, add one line to `interview-stories.md` tagging the week's best moment to a competency, for example:
+`2026-10-08: Terraform bootstrap split → ownership of infrastructure decisions`.
+Suggested by Giuseppe in session 01, so the STAR story bank is ready when mock interviews start.

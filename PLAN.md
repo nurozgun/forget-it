@@ -26,14 +26,59 @@ The rest of Week 3 is decided at today's check-in. The proposed Week 3 table bel
 
 | Step | What | Done when |
 |---|---|---|
-| 1 (15 min) | Install mise if needed, then in the repo root: `mise use go@1.25 kubectl k3d k9s`. If a tool isn't found, install it with Homebrew instead. | `mise.toml` exists and `mise ls` shows the tools |
+| 1 (15 min) | Install mise if needed, then in the repo root: `mise use go@1.25 terraform kubectl helm k3d k9s`. Pin Go to match `app/go.mod` (1.25), not the 1.23 in Giuseppe's example. If a tool isn't found, install it with Homebrew instead. | `mise.toml` exists and `mise ls` shows the tools |
+| 1b (5 min) | Replace the personal email in `infra/envs/dev/example.tfvars` with a placeholder like `you@example.com` (the repo is public). The real value moves to fnox next week. | Pushed |
 | 2 (15 min) | `k3d cluster create forget-it`, then `kubectl get nodes` | The node is `Ready` |
 | 3 (30 min) | Open `k9s` and explore the empty cluster: `:pods` in `kube-system`, logs, describe. Note what k3s bundles (Traefik, CoreDNS, local-path storage, the service load balancer). | A few notes in PROGRESS.md |
 | 4 | Commit `mise.toml` and push. `k3d cluster stop forget-it` when done (it's local, so it costs nothing either way). | Pushed |
 
 Optional only with energy left: `/metrics` endpoint with `client_golang`.
 
-## Week 3 (Mon Oct 26 – Fri Oct 30): proposed at the Oct 23 weekly review, not agreed
+## Session 01 with Giuseppe (Oct 20) — homework before session 02
+
+Session notes are in Giuseppe's PDF and the shared Google Doc. Session 02 date: not set yet.
+Session 02 plan: review the updated CV, walk through the Excalidraw design together, and one diagnostic Go problem.
+Send each item to Giuseppe on Discord as soon as it's done, not all at the end.
+
+**His eight items, in his order of impact**
+1. CV: title, owned verbs, Kafka bullet first, GitHub link, summary that names the target role (no culture close).
+2. LinkedIn: headline, About, Hootsuite end date Oct 2026, "Vanocuver" typo, owned verbs, skills order.
+3. forget-it: k3d instead of kind.
+4. forget-it: k9s in `mise.toml`, 30 minutes using it instead of kubectl.
+5. forget-it: `/metrics` Prometheus endpoint, even a stub with one custom counter.
+6. Go: one Exercism problem a day for two weeks (exercism.org/tracks/go, medium). Practical parsing and I/O, not algorithms. Solve without looking anything up, then read the idiomatic solution and rewrite.
+7. System design: Excalidraw diagram of a familiar web app. Write the four scoping answers at the top first (who uses it, what's the hard problem, what's out of scope, how success is measured).
+8. SRE book Ch 1–3 and Ch 13.
+
+**His repo quick wins**
+- GitHub description and topics (2 minutes).
+- `mise.toml` pinning tools (done today if step 1 lands).
+- Pre-commit hooks for Terraform: fmt, validate, tflint, trivy (antonbabenko/pre-commit-terraform).
+- fnox: move the budget alert email out of files into `TF_VAR_budget_alert_emails`, mark the variable `sensitive`, no `.env` files.
+- Every PIR ends with an interview hook: "I deliberately broke X to understand Y. I learned Z, and it changed how I now do W." (Added to `break-fix/TEMPLATE.md`.)
+- `interview-stories.md`: each Friday, one line tagging the week's best moment to a competency.
+
+**Questions he asked Nur to answer (send on Discord)**
+- Which Grafana dashboards did you build? Did you write the PromQL?
+- Any SLO, SLI or error budget work at Hootsuite, even informal?
+- On-call scope: how many services? Any MTTR or P1 numbers?
+- Full LinkedIn skills list.
+- Is the API spec written anywhere, or straight to code?
+- Plan for coding rounds; SRE book progress; any mock design done.
+
+**Proposed for the rest of this week (gentle pace after illness, confirm at check-in)**
+
+| Day | Morning | Afternoon |
+|---|---|---|
+| Tue Oct 27 | (sick until today) | mise, k3d, k9s, email placeholder (steps above) |
+| Wed Oct 28 | CV five fixes. Needs the on-call numbers and the true verb for the Kafka work first. | Exercism #1; `/metrics` stub with one counter |
+| Thu Oct 29 | LinkedIn six fixes | Exercism #2; GitHub metadata; pre-commit hooks |
+| Fri Oct 30 | Exercism #3; SRE book Ch 1 | Excalidraw diagram, scoping answers first; first line of `interview-stories.md` |
+
+Next week: SRE Ch 2, 3 and 13; fnox; back to `POST /items` and `GET /items/random`; daily Exercism continues.
+Until session 02, the daily 10:15 design rotation in COACH.md is replaced by these homework items. The Week 3 table below is superseded.
+
+## Week 3 (Mon Oct 26 – Fri Oct 30): proposed at the Oct 23 weekly review, superseded on Oct 27 by the session 01 homework above
 
 Proposed before Nur replied. Coach sessions: confirm with Nur before treating this as the plan.
 The Week 2 scorecard and the open questions to Nur are in `weekly/2026-W43.md` (draft).

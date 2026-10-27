@@ -30,6 +30,6 @@ How was it noticed? How should it have been noticed?
 | Action | Type (prevent / detect / mitigate) |
 | ------ | ---------------------------------- |
 
-## How I'd explain this in an interview
+## Interview hook
 
-Five lines or fewer.
+One paragraph: "I deliberately broke X to understand Y. What I learned was Z, and it changed how I now do W."
