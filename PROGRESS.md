@@ -21,6 +21,12 @@ Format:
 - Nur was sick again Oct 20–26 (a second virus right after the first), with no energy for study. The placeholder entries for Oct 21, 22, 23 and 26 are not missed work; they were sick days. Two weeks lost to illness in total (Oct 15–26).
 - Not yet known: whether the Oct 20 session with Giuseppe happened and what he said. Nur has messaged him about being sick.
 - Today: slow restart from about 2 PM with the tooling Giuseppe recommended (mise, k3d, k9s). See PLAN.md.
+- 4:00 check-in, waiting for Nur's update: nothing from the restart steps is pushed yet. There's no `mise.toml`, and the personal email is still in `infra/envs/dev/example.tfvars`. It may be done locally.
+- Done / Blocked / Learned (k9s notes): awaiting Nur.
+- Break-fix: none planned (restart day).
+- AWS spend month-to-date: not reported all of October. Billing access fix not confirmed.
+- Destroyed everything billable: not confirmed.
+- Tomorrow: proposed in chat (CV fixes in the morning, Exercism #1 and the `/metrics` stub in the afternoon, no break-fix). Not agreed yet.
 
 ## 2026-10-26 (Mon, Week 3 Day 1)
 
