@@ -16,6 +16,17 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-28 (Wed)
+
+- Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
+- No reply came to the Oct 27 check-in, so today's proposed plan (CV fixes; Exercism #1; `/metrics` stub) was never confirmed.
+- Seen in the repo: nothing pushed since the Oct 27 PLAN update. No `mise.toml` yet. The personal email is still in `infra/envs/dev/example.tfvars` (public repo, so this is the first fix). `app/` has only `/healthz`.
+- Done / Blocked / Learned: awaiting Nur.
+- Break-fix: none planned. Awaiting Nur.
+- AWS spend month-to-date: not reported for any of October. Billing access fix not confirmed.
+- Destroyed everything billable: not confirmed.
+- Tomorrow: Thu Oct 29 gets set with Nur once she replies. Until then, the proposed Thursday row in PLAN.md stands, with any of Tue/Wed that didn't get done coming first.
+
 ## 2026-10-27 (Tue)
 
 - Nur was sick again Oct 20–26 (a second virus right after the first), with no energy for study. The placeholder entries for Oct 21, 22, 23 and 26 are not missed work; they were sick days. Two weeks lost to illness in total (Oct 15–26).
