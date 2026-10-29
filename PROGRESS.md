@@ -16,6 +16,17 @@ Format:
 
 <!-- entries below -->
 
+## 2026-10-29 (Thu)
+
+- Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.
+- Third check-in in a row (Oct 27, 28, 29) with no reply. Asked in chat whether she's still recovering or skipping check-ins, so the coach stops planning days that won't happen.
+- Seen in the repo: nothing pushed since the Oct 27 PLAN update. No `mise.toml`. Personal email still in `infra/envs/dev/example.tfvars` (public repo). `app/` has only `/healthz`. Nothing new in `design/` or `break-fix/`.
+- Done / Blocked / Learned: awaiting Nur.
+- Break-fix: none planned this week. Awaiting Nur.
+- AWS spend month-to-date: not reported for any of October. Billing access fix not confirmed.
+- Destroyed everything billable: not confirmed.
+- Tomorrow: Fri Oct 30, weekly review at 4:00. Proposed in chat: a light catch-up day, and the first mock moved to Nov 6 or later. Not agreed yet.
+
 ## 2026-10-28 (Wed)
 
 - Placeholder written at the 4:00 check-in while waiting for Nur's update. It gets replaced when she replies.

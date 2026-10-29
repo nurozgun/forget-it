@@ -75,6 +75,8 @@ Send each item to Giuseppe on Discord as soon as it's done, not all at the end.
 | Thu Oct 29 | LinkedIn six fixes | Exercism #2; GitHub metadata; pre-commit hooks |
 | Fri Oct 30 | Exercism #3; SRE book Ch 1 | Excalidraw diagram, scoping answers first; first line of `interview-stories.md` |
 
+**Fri Oct 30, proposed at the Oct 29 check-in (not agreed; no reply Oct 27–29):** a light catch-up day. Do whatever's easiest from the Oct 27 restart steps first (email placeholder, then `mise.toml`, then k3d). Then the weekly review at 4:00, which plans Week 4 from wherever things actually are. The first mock is proposed to move to Nov 6 or later; Nur decides.
+
 Next week: SRE Ch 2, 3 and 13; fnox; back to `POST /items` and `GET /items/random`; daily Exercism continues.
 Until session 02, the daily 10:15 design rotation in COACH.md is replaced by these homework items. The Week 3 table below is superseded.
 
