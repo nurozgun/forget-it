@@ -19,20 +19,46 @@ Study hours (10:15–4:30) cover the Go backend and the platform around it only.
 The phone and web client, and the product side (free app with paid AI features), are a separate project for now and stay outside study hours.
 Nur may bring them into the plan later; until she does, don't schedule them.
 
-## Restart — Tue Oct 27 afternoon (confirmed Oct 27)
+## Week 4 (Mon Nov 2 – Fri Nov 6): proposed at the Oct 30 weekly review, not agreed
 
-Nur was sick Oct 15–26 and restarts slowly today, from about 2 PM. Small mechanical steps only; stop when tired.
-The rest of Week 3 is decided at today's check-in. The proposed Week 3 table below is not the plan until she agrees to it.
+Proposed before Nur replied (no reply to any check-in Oct 27–30). Coach sessions: confirm with Nur before treating this as the plan.
+Scorecard and open questions are in `weekly/2026-W44.md` (draft).
 
-| Step | What | Done when |
+Goal: one honest restart week. By Friday, the repo shows the Go service with tests running on k3d, at least three design answers and at least two PIRs.
+These are the Week 0–1 build goals; Kafka and observability wait.
+
+Open decisions for Nur (see the weekly file): full days or half days next week; whether the 10:15 design rotation comes back now (coach recommends yes) or stays replaced by Giuseppe's homework until session 02; roadmap option A or B; the first mock date.
+
+Rules for the week:
+- Push the design file by 11:15 and everything else by 3:40, even half-done. Work that isn't pushed can't be reviewed.
+- If a day goes badly, do the "minimum" line and push it. A small push beats a silent day.
+- Giuseppe's CV and LinkedIn items fit in the 11:15–12:30 block or outside study hours; Nur decides which.
+
+### Mon Nov 2 — proposed
+
+| Time | Block | Done when |
 |---|---|---|
-| 1 (15 min) | Install mise if needed, then in the repo root: `mise use go@1.25 terraform kubectl helm k3d k9s`. Pin Go to match `app/go.mod` (1.25), not the 1.23 in Giuseppe's example. If a tool isn't found, install it with Homebrew instead. | `mise.toml` exists and `mise ls` shows the tools |
-| 1b (5 min) | Replace the personal email in `infra/envs/dev/example.tfvars` with a placeholder like `you@example.com` (the repo is public). The real value moves to fnox next week. | Pushed |
-| 2 (15 min) | `k3d cluster create forget-it`, then `kubectl get nodes` | The node is `Ready` |
-| 3 (30 min) | Open `k9s` and explore the empty cluster: `:pods` in `kube-system`, logs, describe. Note what k3s bundles (Traefik, CoreDNS, local-path storage, the service load balancer). | A few notes in PROGRESS.md |
-| 4 | Commit `mise.toml` and push. `k3d cluster stop forget-it` when done (it's local, so it costs nothing either way). | Pushed |
+| 10:15–10:20 | **First move:** replace `nurozgun@gmail.com` in `infra/envs/dev/example.tfvars` with `you@example.com`, commit, push. The repo is public. | Pushed |
+| 10:20–11:15 | **System design, classic #2: multi-tenant rate limiter for a public API.** Use `design/TEMPLATE.md`. Cover per-tenant limits and tiers, token bucket vs. sliding window, where the counters live (local vs. Redis) and what happens when that store is slow or down, and how one noisy tenant is kept from hurting the others. Rough is fine; every heading gets something. | `design/2026-11-02-rate-limiter.md` pushed by 11:15, complete or not |
+| 11:15–12:30 | **Tooling (the Oct 27 restart steps).** `mise use go@1.25 terraform kubectl helm k3d k9s` in the repo root (Homebrew for anything mise can't find), `k3d cluster create forget-it`, `kubectl get nodes`, then 20 minutes in `k9s` noting what k3s bundles. | `mise.toml` pushed; node `Ready`; a few k9s notes in PROGRESS.md |
+| 1:15–3:00 | **Go service, local only.** `POST /items` (text or link) and `GET /items/random`, in-memory store guarded by `sync.Mutex`, keyed by tenant; missing `X-Tenant-ID` returns 400. Tests with `httptest`: happy path, missing tenant, empty basket, tenant isolation. | `go test ./...` passes and is on `main` |
+| 3:00–3:40 | **Break-fix: data race.** Remove the mutex, add a test that POSTs concurrently, run `go test -race`, read the report, put the fix back. | `break-fix/2026-11-02-data-race.md` follows the template, including the interview hook |
+| 3:40–4:00 | Billing access fix if still open (root → Account → IAM user and role access to Billing), read month-to-date spend. 5-line interview note, push. `k3d cluster stop forget-it`. | Spend figure in hand; everything on `main` |
+| 4:00 | Check-in. The coach reviews the rate limiter with interviewer follow-ups. | |
 
-Optional only with energy left: `/metrics` endpoint with `client_golang`.
+**Minimum for Monday if energy is low:** the email fix, the design file (even half), and `POST /items` with one test. Push all three.
+
+### Rest of the week — proposed
+
+| Day | Design 10:15–11:15 (rotation) | Build | Break-fix 3:00–3:40 |
+|---|---|---|---|
+| Tue Nov 3 | Deep dive: Kubernetes requests vs. limits, OOMKilled vs. CPU throttling | Multi-stage Dockerfile; Deployment and Service on k3d with readiness and liveness probes; `/metrics` stub with one custom counter (`client_golang`) | CrashLoopBackOff on k3d (bad probe or missing env), PIR |
+| Wed Nov 4 | Classic #16: URL shortener with analytics (caching, hot keys) | Postgres on k3d behind a storage interface; tenant in every query | Break the app→Postgres path (DNS or Service selector), debug from inside the pod, PIR |
+| Thu Nov 5 | ADR-001: k3d over kind for local development (`design/adr/`) | GitHub Actions: test and build on PR; Terraform pre-commit hooks (fmt, validate, tflint, trivy); GitHub description and topics | Terraform state lock (S3 only, near-zero cost), PIR |
+| Fri Nov 6 | Untimed classic #5: notification system, follow-ups at the check-in. Unscored unless Nur chooses to make it the first mock | Catch-up morning; Excalidraw diagram for Giuseppe (scoping answers first); SRE book Ch 1 | None |
+
+Daily, about 30 minutes, placed where Nur prefers: one Exercism Go problem (medium).
+Not this week: Kafka, fnox, observability stack.
 
 ## Session 01 with Giuseppe (Oct 20) — homework before session 02
 
@@ -66,51 +92,12 @@ Send each item to Giuseppe on Discord as soon as it's done, not all at the end.
 - Is the API spec written anywhere, or straight to code?
 - Plan for coding rounds; SRE book progress; any mock design done.
 
-**Proposed for the rest of this week (gentle pace after illness, confirm at check-in)**
+**Status at the Oct 30 weekly review:** none of the Oct 27–30 restart steps or homework items are visible in the repo, and Nur hasn't replied since Oct 27. Items 3–5 and the repo quick wins are folded into the Week 4 proposal above. Items 1, 2, 6, 7, 8 and the Discord answers live outside the repo; Nur reports their status.
 
-| Day | Morning | Afternoon |
-|---|---|---|
-| Tue Oct 27 | (sick until today) | mise, k3d, k9s, email placeholder (steps above) |
-| Wed Oct 28 | CV five fixes. Needs the on-call numbers and the true verb for the Kafka work first. | Exercism #1; `/metrics` stub with one counter |
-| Thu Oct 29 | LinkedIn six fixes | Exercism #2; GitHub metadata; pre-commit hooks |
-| Fri Oct 30 | Exercism #3; SRE book Ch 1 | Excalidraw diagram, scoping answers first; first line of `interview-stories.md` |
+## Week 3 (Mon Oct 26 – Fri Oct 30) — past
 
-**Fri Oct 30, proposed at the Oct 29 check-in (not agreed; no reply Oct 27–29):** a light catch-up day. Do whatever's easiest from the Oct 27 restart steps first (email placeholder, then `mise.toml`, then k3d). Then the weekly review at 4:00, which plans Week 4 from wherever things actually are. The first mock is proposed to move to Nov 6 or later; Nur decides.
-
-Next week: SRE Ch 2, 3 and 13; fnox; back to `POST /items` and `GET /items/random`; daily Exercism continues.
-Until session 02, the daily 10:15 design rotation in COACH.md is replaced by these homework items. The Week 3 table below is superseded.
-
-## Week 3 (Mon Oct 26 – Fri Oct 30): proposed at the Oct 23 weekly review, superseded on Oct 27 by the session 01 homework above
-
-Proposed before Nur replied. Coach sessions: confirm with Nur before treating this as the plan.
-The Week 2 scorecard and the open questions to Nur are in `weekly/2026-W43.md` (draft).
-
-Goal: get the service and the habits back on track, and put the first design answers and the first PIR in the repo. Kafka waits.
-Rule: push the design file by 11:15 and everything else by 3:40, even if it's half-done.
-
-### Mon Oct 26 — proposed; nothing pushed by the 4:00 check-in
-
-No update from Nur yet. If it wasn't done, Monday's build and break-fix carry into Tue Oct 27 and the Tuesday plan gets cut down, not stacked. Decide at the check-in.
-
-| Time | Block | Done when |
-|---|---|---|
-| 10:15–11:15 | **System design, classic #2: multi-tenant rate limiter for a public API.** Use `design/TEMPLATE.md`. Cover: per-tenant limits and tiers, token bucket vs. sliding window, where the counters live (local vs. Redis) and what happens when that store is slow or down, and how to stop one noisy tenant from hurting the others. Rough is fine; all 8 headings should have something under them. | `design/2026-10-26-rate-limiter.md` is pushed by 11:15, complete or not. |
-| 11:15–12:30 | **Go service, local only.** `POST /items` (text or link) and `GET /items/random`, in-memory store guarded by `sync.Mutex`, keyed by tenant. A missing `X-Tenant-ID` returns 400. | Both endpoints work with `curl`. |
-| 1:15–3:00 | Tests with `httptest`: happy path, missing tenant, empty basket on `/random`, and tenant isolation (tenant A never sees B's items). Then push. If there's time, start the multi-stage Dockerfile. | `go test ./...` passes and is on `main`. |
-| 3:00–3:40 | **Break-fix: data race.** Remove the mutex, write a test that hits `POST` concurrently, run `go test -race`, read the report, put the fix back. | `break-fix/2026-10-26-data-race.md` follows the template. |
-| 3:40–4:00 | If still open: billing access fix (sign in as root → Account → activate IAM user and role access to Billing) and read month-to-date spend. Write the 5-line interview note, commit, push. Nothing on AWS needs destroying today. | Everything is on `main` and the spend figure is in hand. |
-| 4:00 | Check-in. The coach reviews the rate limiter answer with interviewer follow-ups. | |
-
-### Rest of the week — proposed
-
-| Day | Design 10:15–11:15 | Build | Break-fix 3:00–3:40 |
-|---|---|---|---|
-| Tue Oct 27 | Deep dive: Kubernetes requests vs. limits, OOMKilled vs. CPU throttling | Multi-stage Dockerfile, k3d cluster, Deployment with probes, k9s, `mise.toml` | CrashLoopBackOff on k3d, PIR |
-| Wed Oct 28 | Classic #5: notification system | `/metrics` with `client_golang`, then Postgres on k3d behind a storage interface | Break the app→Postgres path (DNS or Service selector), debug from inside the pod, PIR |
-| Thu Oct 29 | ADR-001: k3d over kind for local development | Tenant in every query, then GitHub Actions: test and build on PR | Terraform state lock (only S3), PIR |
-| Fri Oct 30 | Untimed classic #16: URL shortener with analytics, follow-ups at the check-in. The first scored mock is proposed to move to Nov 6 or later; Nur decides | Catch-up morning, then the small Terraform fixes from the Oct 8 review | None |
-
-Open for Nur: Giuseppe's Oct 20 feedback, days off or interviews next week, roadmap option A (slide two weeks) or B (slide one week and cut Mimir/Pyroscope, merge GitOps and security). The roadmap table below is unchanged until she decides.
+Mon Oct 26 was a sick day. Tue Oct 27 was a planned slow restart (mise, k3d, k9s, email placeholder); nothing from it was pushed, and there was no reply to the Oct 27–30 check-ins.
+The Oct 23 Week 3 table was superseded on Oct 27 by Giuseppe's homework. Scorecard in `weekly/2026-W44.md`.
 
 ## Restart — Tue Oct 20 (confirmed Oct 20)
 
@@ -238,6 +225,15 @@ Nur confirmed on Oct 13 that she starts today with this plan. Wed–Fri are stil
 
 Proposed move: the Helm chart, pushing to GHCR, and `terraform plan` on PRs go from Week 1 to the start of Week 2, ahead of Kafka.
 The roadmap table below is unchanged until Nur agrees. Whether the whole roadmap slides a week is a question for the Oct 16 review.
+
+## Roadmap re-plan: proposed Oct 30, Nur decides
+
+The table below is the original. As of Oct 30 the Week 0–1 build goals are still open, so it is about three weeks behind. Week 4 (Nov 2–6) is proposed as the Week 0–1 build. Two options from there:
+
+- **A. Slide everything three weeks, keep all scope.** Kafka Nov 9–13 (Nov 11 holiday), observability Nov 16–20, SLOs Nov 23–27, GitOps and security Nov 30–Dec 4, EKS Dec 7–11, AI Dec 14–18, capstone Dec 21–Jan 8 around the holidays.
+- **B. Slide and cut scope.** Kafka Nov 9–13, observability Nov 16–20, SLOs Nov 23–27, GitOps and security merged Nov 30–Dec 4 (drop Mimir and Pyroscope), EKS Dec 7–11, then a smaller AI piece plus the capstone Dec 14–18.
+
+The right one depends on when applications go out. The EKS-week AWS budget still needs deciding before that week.
 
 ## Roadmap (rough, re-planned every Friday)
 
